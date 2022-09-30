@@ -51,7 +51,7 @@ client.indices.put_mapping(index: "semantic_development", body: MAPPINGS)
 # Verify that the index is created
 client.indices.get(index: "semantic_development")
 
-db_json = File.read("Desktop/scripts/db.json")
+db_json = File.read("db.json")
 db = JSON.parse(db_json)
 
 puts "Indexing Terms ..."
