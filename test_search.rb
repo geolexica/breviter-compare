@@ -60,3 +60,5 @@ end
 File.open("test_results.yml", "w") do |f|
   f.puts(results.to_yaml)
 end
+
+puts(results.to_yaml)

@@ -1,0 +1,55 @@
+name: name
+
+on:
+  push:
+    branches: [ adding_github_action ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup prerequisites
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y curl make libxml2-dev libxslt-dev openssl
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Use Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+
+    - name: Use Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'npm'
+
+    - name: Install libraries for tenserflow
+      run: npm install @tensorflow/tfjs @tensorflow-models/universal-sentence-encoder
+
+    - name: Configure sysctl limits
+      run: |
+        sudo swapoff -a
+        sudo sysctl -w vm.swappiness=1
+        sudo sysctl -w fs.file-max=262144
+        sudo sysctl -w vm.max_map_count=262144
+
+    - name: Runs Elasticsearch
+      uses: elastic/elastic-github-actions/elasticsearch@master
+      with:
+        stack-version: 8.4.2
+        security-enabled: false
+
+    - name: Install gems
+      run: make install_elasticsearch
+
+    - name: Setup Elasticsearch
+      run: make setup_elasticsearch
+
+    - name: Run Tests
+      run: make

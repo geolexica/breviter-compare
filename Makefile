@@ -1,7 +1,6 @@
-.PHONY: all setup_docker setup_elasticsearch install_elasticsearch
+.PHONY: all test_search setup_docker setup_elasticsearch install_elasticsearch
 
 all: install_elasticsearch test_search
-	test_search
 
 test_search: test-vectors.txt
 	ruby test_search.rb
