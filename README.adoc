@@ -1,1 +1,21 @@
-Scripts for comparing breviter with elasticsearch
+= Scripts for comparing breviter with elasticsearch
+
+== Steps to run
+
+- Start Docker
+- Start up elasticsearch:
++
+```bash
+make setup_docker
+```
+- Set up elasticsearch:
++
+```bash
+make setup_elasticsearch
+```
+- Run tests:
++
+```bash
+make
+# or just make test_search
+```
