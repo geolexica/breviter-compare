@@ -1,8 +1,6 @@
 name: name
 
 on:
-  push:
-    branches: [ adding_github_action ]
   workflow_dispatch:
 
 jobs:
