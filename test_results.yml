@@ -1,0 +1,319 @@
+---
+- :query: closeness to a coordinate
+  :expected_result: absolute accuracy
+  :rank: 0
+- :query: display software
+  :expected_result: access software
+  :rank: 3
+- :query: program to process data
+  :expected_result: application
+  :rank: 1
+- :query: property of an object
+  :expected_result: attribute
+  :rank: 0
+- :query: digital terrain model
+  :expected_result: bare earth elevation
+  :rank: 2
+- :query: distance around geometric feature
+  :expected_result: buffer
+  :rank: 1
+- :query: text values
+  :expected_result: character
+  :rank: -1
+- :query: taxonomy
+  :expected_result: classification
+  :rank: -1
+- :query: program that calls api on server
+  :expected_result: client
+  :rank: 0
+- :query: minimal area around a geometric object
+  :expected_result: convex hull
+  :rank: 1
+- :query: change the values of a coordinate
+  :expected_result: coordinate operation
+  :rank: 0
+- :query: gridded data
+  :expected_result: coverage
+  :rank: -1
+- :query: tabular feature data
+  :expected_result: feature instance
+  :rank: 4
+- :query: device to measure a quantity or thing
+  :expected_result: sensor
+  :rank: -1
+- :query: time system
+  :expected_result: temporal reference system
+  :rank: 0
+- :query: boundary of topological object
+  :expected_result: topological boundary
+  :rank: 0
+- :query: road network
+  :expected_result: transport network
+  :rank: 0
+- :query: person moving through a network
+  :expected_result: traveller
+  :rank: 8
+- :query: triangle surface mesh
+  :expected_result: triangulated irregular network
+  :rank: 0
+- :query: unprojected grid
+  :expected_result: ungeoreferenced grid
+  :rank: -1
+- :query: line geometry
+  :expected_result: vector geometry
+  :rank: 0
+- :query: selected point a candidate route passes through
+  :expected_result: waypoint
+  :rank: 8
+- :query: service on internet
+  :expected_result: web service
+  :rank: -1
+- :query: null characters
+  :expected_result: whitespace
+  :rank: -1
+- :query: shortened form of a concept
+  :expected_result: abbreviation
+  :rank: 5
+- :query: status of access to a service
+  :expected_result: accessibility
+  :rank: 9
+- :query: self-powered sensing device
+  :expected_result: active sensor
+  :rank: 1
+- :query: identification and location of an object
+  :expected_result: address
+  :rank: 0
+- :query: information used to identify the location of an entity
+  :expected_result: address
+  :rank: 1
+- :query: outdated term
+  :expected_result: obsolete term
+  :rank: 0
+- :query: height above sea level
+  :expected_result: altitude
+  :rank: 0
+- :query: section of a line
+  :expected_result: arc <geometry>
+  :rank: 1
+- :query: angular measure of direction
+  :expected_result: bearing
+  :rank: 1
+- :query: range of years based on an event
+  :expected_result: calendar era
+  :rank: 0
+- :query: information about group of items
+  :expected_result: catalogue
+  :rank: 5
+- :query: list of codes
+  :expected_result: codelist
+  :rank: 3
+- :query: reduce storage size
+  :expected_result: data compression
+  :rank: 0
+- :query: null set
+  :expected_result: empty set
+  :rank: -1
+- :query: group of like features
+  :expected_result: feature type
+  :rank: 3
+- :query: multiple archives
+  :expected_result: federated archives
+  :rank: 1
+- :query: list of locations
+  :expected_result: gazetteer
+  :rank: 2
+- :query: location represented by a coordinate
+  :expected_result: geographic point location
+  :rank: 4
+- :query: point with an accurate location
+  :expected_result: ground control point
+  :rank: 0
+- :query: on-site measurement
+  :expected_result: in situ measurement
+  :rank: 9
+- :query: computer system that processes and displays data
+  :expected_result: information system
+  :rank: 7
+- :query: temporary use of a resource
+  :expected_result: lease
+  :rank: 3
+- :query: representation of data based on a classification
+  :expected_result: legend
+  :rank: 0
+- :query: geospatial data and information on the web
+  :expected_result: linked geodata
+  :rank: 3
+- :query: computing environment based on user's native language
+  :expected_result: locale
+  :rank: 6
+- :query: identified place
+  :expected_result: location
+  :rank: 0
+- :query: styled display of geographic information
+  :expected_result: map
+  :rank: 7
+- :query: transformation of spherical coordinates to a plane
+  :expected_result: map projection
+  :rank: 5
+- :query: description of a collection of data
+  :expected_result: metadata
+  :rank: 3
+- :query: type of measurement system
+  :expected_result: metric unit
+  :rank: 0
+- :query: straight down
+  :expected_result: nadir
+  :rank: 3
+- :query: information history
+  :expected_result: provenance
+  :rank: -1
+- :query: storage method of a matrix
+  :expected_result: row-major form
+  :rank: -1
+- :query: angle measure for degrees
+  :expected_result: sexagesimal degree
+  :rank: 0
+- :query: variation in steepness
+  :expected_result: slope
+  :rank: 2
+- :query: gridded data based on a common attribute
+  :expected_result: thematic data
+  :rank: 0
+- :query: group of points in an area
+  :expected_result: neighborhood <topology, metric spaces>
+  :rank: 0
+- :query: polygon projected on a surface
+  :expected_result: footprint
+  :rank: 0
+- :query: travel to places
+  :expected_result: journey
+  :rank: 0
+- :query: observed land characteristics
+  :expected_result: physiognomy
+  :rank: 1
+- :query: observed surface characteristics
+  :expected_result: land cover
+  :rank: 0
+- :query: point relative to a route
+  :expected_result: linear referencing system
+  :rank: 1
+- :query: group of turns in route
+  :expected_result: maneuver
+  :rank: -1
+- :query: human-readable
+  :expected_result: portrayal
+  :rank: 1
+- :query: initial longitude
+  :expected_result: prime meridian
+  :rank: 4
+- :query: merged image
+  :expected_result: fused image
+  :rank: 1
+- :query: time coordinate system
+  :expected_result: temporal coordinate reference system
+  :rank: 1
+- :query: representation of the real world
+  :expected_result: universe of discourse
+  :rank: 5
+- :query: georeferenced grid
+  :expected_result: rectified grid
+  :rank: 1
+- :query: radiation energy
+  :expected_result: irradiance
+  :rank: 0
+- :query: linear sensor
+  :expected_result: pushbroom sensor
+  :rank: 4
+- :query: sound detection
+  :expected_result: hydrophone<SONAR>
+  :rank: 2
+- :query: like concept different language
+  :expected_result: term equivalent
+  :rank: 0
+- :query: temporal repeat
+  :expected_result: periodic time
+  :rank: 0
+- :query: examination of a property
+  :expected_result: observation
+  :rank: 3
+- :query: position on earth
+  :expected_result: spatial reference
+  :rank: -1
+- :query: set of 3d data points
+  :expected_result: point cloud
+  :rank: 0
+- :query: set of surface data points
+  :expected_result: digital elevation model
+  :rank: 5
+- :query: enumeration
+  :expected_result: value domain
+  :rank: 0
+- :query: coordinate conversion between two systems
+  :expected_result: coordinate transformation
+  :rank: 4
+- :query: movement of a vessel
+  :expected_result: heave
+  :rank: 0
+- :query: deformed sphere
+  :expected_result: spheroid
+  :rank: 1
+- :query: merged features
+  :expected_result: feature fusion
+  :rank: 4
+- :query: line of change on a surface
+  :expected_result: breakline
+  :rank: 2
+- :query: spatial object through time
+  :expected_result: spatiotemporal object
+  :rank: 4
+- :query: combined symbols
+  :expected_result: compound symbol
+  :rank: 2
+- :query: set of closest polygon
+  :expected_result: Thiessen polygon
+  :rank: 2
+- :query: ordered set of numbers
+  :expected_result: matrix
+  :rank: 0
+- :query: splitting into identical spaces
+  :expected_result: tessellation
+  :rank: 0
+- :query: energy converter
+  :expected_result: transducer
+  :rank: 0
+- :query: limit of an object
+  :expected_result: boundary
+  :rank: -1
+- :query: synonymous term
+  :expected_result: admitted term
+  :rank: -1
+- :query: geometric errors in an image
+  :expected_result: image distortion
+  :rank: -1
+- :query: simple test of conformance
+  :expected_result: basic test
+  :rank: -1
+- :query: shortest distance between two points on a sphere
+  :expected_result: loxodrome
+  :rank: -1
+- :query: set response to a control
+  :expected_result: calibration
+  :rank: -1
+- :query: closed area feature
+  :expected_result: polygon
+  :rank: -1
+- :query: affine coordinate system
+  :expected_result: Cartesian coordinate system
+  :rank: -1
+- :query: observing and measuring a feature from a distance
+  :expected_result: remote sensing
+  :rank: -1
+- :query: representation of a system
+  :expected_result: conceptual model
+  :rank: -1
+- :query: road network crossing
+  :expected_result: junction
+  :rank: -1
+- :query: persistent independent data archive
+  :expected_result: long term preservation
+  :rank: -1
