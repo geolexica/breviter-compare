@@ -30,7 +30,7 @@ jobs:
         cache: 'npm'
 
     - name: Install libraries for tenserflow
-      run: npm install @tensorflow/tfjs @tensorflow-models/universal-sentence-encoder
+      run: npm install
 
     - name: Configure sysctl limits
       run: |
