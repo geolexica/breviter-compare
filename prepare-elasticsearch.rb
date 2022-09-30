@@ -1,5 +1,6 @@
 # gem install elasticsearch -v 7.10.1
 
+require "bundler/setup"
 require "elasticsearch"
 require "typhoeus"
 require "json"
