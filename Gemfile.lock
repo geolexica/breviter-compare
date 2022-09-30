@@ -43,6 +43,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  ruby
 
 DEPENDENCIES
   elasticsearch (= 7.10.1)
