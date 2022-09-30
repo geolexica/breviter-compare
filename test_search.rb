@@ -1,5 +1,6 @@
 # frozen_string_literal: truet
 
+require "bundler/setup"
 require "elasticsearch"
 require "typhoeus"
 require "json"
