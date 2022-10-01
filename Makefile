@@ -10,7 +10,11 @@ test-vectors.txt:
 
 setup_docker:
 	docker network create elastic-network
-	docker run -d --name elasticsearch --net elastic-network -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:8.4.2
+	docker run -d --name elasticsearch --net elastic-network \
+		-p 9200:9200 -p 9300:9300 \
+		-e "discovery.type=single-node" \
+		-e "xpack.security.enabled=false" \
+		elasticsearch:8.4.2
 
 install_elasticsearch:
 	bundle install
