@@ -16,6 +16,10 @@ setup_docker:
 		-e "xpack.security.enabled=false" \
 		elasticsearch:8.4.2
 
+kill_docker:
+	docker rm -f $$(docker ps -f name=elasticsearch -q)
+	docker network prune -f
+
 install_elasticsearch:
 	bundle install
 
