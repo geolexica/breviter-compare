@@ -6,13 +6,43 @@ require 'typhoeus'
 require 'json'
 require 'yaml'
 
-data = File.read('test-vectors.txt')
-test_cases = JSON.parse(data)
+def run_tests(client, test_cases)
+  results = []
+  test_cases.each do |test_case|
+    query = test_case[0]
+    expected_result = test_case[1]
+    vector = test_case[2]
 
-client = Elasticsearch::Client.new(
-  adapter: :typhoeus,
-  log: true
-)
+    keyword_script_query = {
+      "match": {
+        "definition": query
+      }
+    }
+
+    script_query = {
+      "script_score": {
+        "query": { "match_all": {} },
+        "script": {
+          "source": "cosineSimilarity(params.query_vector, 'vector') + 1.0",
+          "params": { "query_vector": vector }
+        }
+      }
+    }
+
+    rank = calculate_rank_from_query(client: client, script_query: script_query, expected_result: expected_result)
+    keyword_rank = calculate_rank_from_query(client: client, script_query: keyword_script_query,
+                                             expected_result: expected_result)
+
+    results << {
+      query: query,
+      expected_result: expected_result,
+      rank: rank || -1,
+      keyword_rank: keyword_rank || -1
+    }
+  end
+
+  results
+end
 
 def search(client, query)
   client.search(
@@ -31,35 +61,26 @@ def calculate_rank(response, expected_result)
   end
 end
 
-results = []
-
-test_cases.each do |test_case|
-  query = test_case[0]
-  expected_result = test_case[1]
-  vector = test_case[2]
-
-  script_query = {
-    "script_score": {
-      "query": { "match_all": {} },
-      "script": {
-        "source": "cosineSimilarity(params.query_vector, 'vector') + 1.0",
-        "params": { "query_vector": vector }
-      }
-    }
-  }
-
+def calculate_rank_from_query(client:, script_query:, expected_result:)
   response = search(client, script_query)
-  rank = calculate_rank(response, expected_result)
-
-  results << {
-    'query' => query,
-    'expected_result' => expected_result,
-    'rank' => rank.nil? ? -1 : rank + 1
-  }
+  calculate_rank(response, expected_result)
 end
 
-File.open('test_results_es.yml', 'w') do |f|
-  f.puts(results.to_yaml)
+def main
+  client = Elasticsearch::Client.new(
+    adapter: :typhoeus,
+    log: true
+  )
+
+  data = File.read('test-vectors.txt')
+  test_cases = JSON.parse(data)
+  results = run_tests(client, test_cases)
+
+  File.open('test_results_es.yml', 'w') do |f|
+    f.puts(results.to_yaml)
+  end
+
+  puts(results.to_yaml)
 end
 
-puts(results.to_yaml)
+main
