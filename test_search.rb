@@ -1,12 +1,12 @@
-# frozen_string_literal: truet
+# frozen_string_literal: true
 
-require "bundler/setup"
-require "elasticsearch"
-require "typhoeus"
-require "json"
-require "yaml"
+require 'bundler/setup'
+require 'elasticsearch'
+require 'typhoeus'
+require 'json'
+require 'yaml'
 
-data = File.read("test-vectors.txt")
+data = File.read('test-vectors.txt')
 test_cases = JSON.parse(data)
 
 client = Elasticsearch::Client.new(
@@ -16,18 +16,18 @@ client = Elasticsearch::Client.new(
 
 def search(client, query)
   client.search(
-    index: "semantic_development",
+    index: 'semantic_development',
     body: {
       "size": 10,
       "query": query,
-      "_source": { "includes": ["term"] }
+      "_source": { "includes": ['term'] }
     }
   )
 end
 
 def calculate_rank(response, expected_result)
-  response["hits"]["hits"].index do |hit|
-    hit["_source"]["term"] == expected_result
+  response['hits']['hits'].index do |hit|
+    hit['_source']['term'] == expected_result
   end
 end
 
@@ -58,7 +58,7 @@ test_cases.each do |test_case|
   }
 end
 
-File.open("test_results.yml", "w") do |f|
+File.open('test_results.yml', 'w') do |f|
   f.puts(results.to_yaml)
 end
 
