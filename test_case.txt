@@ -20,8 +20,8 @@ triangle surface mesh;triangulated irregular network
 unprojected grid;ungeoreferenced grid
 line geometry;vector geometry
 selected point a candidate route passes through;waypoint
-service on internet;web service
-null characters;whitespace
+service on internet;Web service
+null characters;white space
 shortened form of a concept;abbreviation
 status of access to a service;accessibility
 self-powered sensing device;active sensor
@@ -54,7 +54,7 @@ description of a collection of data;metadata
 type of measurement system;metric unit
 straight down;nadir
 information history;provenance
-storage method of a matrix;row-major form
+storage method of a matrix;row-major form <mathematics, computer science>
 angle measure for degrees;sexagesimal degree
 variation in steepness;slope
 gridded data based on a common attribute;thematic data
@@ -64,7 +64,7 @@ travel to places;journey
 observed land characteristics;physiognomy
 observed surface characteristics;land cover
 point relative to a route;linear referencing system
-group of turns in route;maneuver
+group of turns in route;maneuver,manœuvre
 human-readable;portrayal
 initial longitude;prime meridian
 merged image;fused image
