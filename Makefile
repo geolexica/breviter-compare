@@ -25,3 +25,8 @@ install_elasticsearch:
 
 setup_elasticsearch:
 	ruby prepare-elasticsearch.rb
+
+clean:
+	rm -f test-vectors.txt
+
+setup: setup_docker install_elasticsearch setup_elasticsearch test_search

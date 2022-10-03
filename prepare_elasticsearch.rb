@@ -22,9 +22,10 @@ SETTINGS = {
     }
   }
 }.freeze
+INDEX_NAME = 'semantic_development'
 
 # Create index
-client.indices.create(index: 'semantic_development', body: SETTINGS)
+client.indices.create(index: INDEX_NAME, body: SETTINGS)
 
 MAPPINGS = {
   dynamic: 'strict',
@@ -48,10 +49,10 @@ MAPPINGS = {
 }.freeze
 
 # Define mappings for index
-client.indices.put_mapping(index: 'semantic_development', body: MAPPINGS)
+client.indices.put_mapping(index: INDEX_NAME, body: MAPPINGS)
 
 # Verify that the index is created
-client.indices.get(index: 'semantic_development')
+client.indices.get(index: INDEX_NAME)
 
 db_json = File.read('db.json')
 db = JSON.parse(db_json)

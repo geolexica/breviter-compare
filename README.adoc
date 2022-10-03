@@ -1,21 +1,28 @@
-= Scripts for comparing breviter with elasticsearch
+= Scripts to compare search results between Breviter and ElasticSearch
 
 == Steps to run
 
 - Start Docker
+
 - Start up elasticsearch:
 +
 ```bash
 make setup_docker
 ```
+
 - Set up elasticsearch:
 +
 ```bash
 make setup_elasticsearch
 ```
+
 - Run tests:
 +
 ```bash
 make
 # or just make test_search
 ```
+
+- Kill ElasticSearch instance with `make kill_docker`
+
+The results will be written to `test_results_es.yml`.
