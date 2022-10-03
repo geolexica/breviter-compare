@@ -52,13 +52,13 @@ test_cases.each do |test_case|
   rank = calculate_rank(response, expected_result)
 
   results << {
-    "query" =>  query,
-    "expected_result" => expected_result,
-    "rank" => rank.nil? ? -1 : rank + 1
+    'query' => query,
+    'expected_result' => expected_result,
+    'rank' => rank.nil? ? -1 : rank + 1
   }
 end
 
-File.open("test_results_es.yml", "w") do |f|
+File.open('test_results_es.yml', 'w') do |f|
   f.puts(results.to_yaml)
 end
 
