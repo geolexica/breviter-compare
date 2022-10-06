@@ -23,8 +23,12 @@ kill_docker:
 install_elasticsearch:
 	bundle install
 
-setup_elasticsearch:
+setup_elasticsearch: db.json
 	ruby prepare-elasticsearch.rb
+
+db.json:
+	cd breviter && yarn compute
+	cp breviter/public/db.json db.json
 
 clean:
 	rm -f test-vectors.txt
