@@ -2,3 +2,5 @@ node_modules
 
 test_results*.yml
 test-vectors.txt
+
+db.json
