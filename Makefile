@@ -24,7 +24,7 @@ install_elasticsearch:
 	bundle install
 
 setup_elasticsearch: db.json
-	ruby prepare-elasticsearch.rb
+	ruby prepare_elasticsearch.rb
 
 db.json:
 	cd breviter && yarn compute
