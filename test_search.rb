@@ -105,8 +105,8 @@ def display_overall_fit_score_formula(results)
       keyword: display_formula(sorted_by_rank_partitions__keyword, max_overall_score, overall_score__keyword, '×').to_s
     },
     '*': {
-      rs: display_formula(sorted_by_rank_partitions__rs, max_overall_score, overall_score__rs, '*').to_s,
-      keyword: display_formula(sorted_by_rank_partitions__keyword, max_overall_score, overall_score__keyword, '*').to_s
+      rs: display_formula(sorted_by_rank_partitions__rs, max_overall_score, overall_score__rs).to_s,
+      keyword: display_formula(sorted_by_rank_partitions__keyword, max_overall_score, overall_score__keyword).to_s
     }
   }
 end
@@ -114,6 +114,7 @@ end
 def display_formula(sorted_by_rank_partitions, denominator, overall_score, mult = '*')
   "(#{
     sorted_by_rank_partitions.keys
+                             .sort_by { |partition| -FIT_SCORES[partition.to_i] }
                              .map { |partition| "#{FIT_SCORES[partition.to_i]}#{mult}#{sorted_by_rank_partitions[partition.to_i]}" }
                              .join(' + ')})" \
     " / #{denominator}" \
