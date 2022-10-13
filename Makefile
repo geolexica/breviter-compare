@@ -1,6 +1,6 @@
-.PHONY: all test_search setup_docker setup_elasticsearch install_elasticsearch
+.PHONY: all test_search setup_docker setup_elasticsearch prerequisites
 
-all: install_elasticsearch test_search
+all: prerequisites test_search
 
 test_search: test-vectors.txt
 	ruby test_search.rb
@@ -17,20 +17,25 @@ setup_docker:
 		elasticsearch:8.4.2
 
 kill_docker:
-	docker rm -f $$(docker ps -f name=elasticsearch -q)
+	docker rm -f $$(docker ps -f name=elasticsearch -q) || \
 	docker network prune -f
 
-install_elasticsearch:
+prerequisites: | update
 	bundle install
+	yarn
+	cd breviter && yarn
 
-setup_elasticsearch: db.json
+setup_elasticsearch: db.json | prerequisites
 	ruby prepare_elasticsearch.rb
 
-db.json:
+db.json: | prerequisites
 	cd breviter && yarn compute
 	cp breviter/public/db.json db.json
 
-clean:
+clean: kill_docker
 	rm -f test-vectors.txt
 
-setup: setup_docker install_elasticsearch setup_elasticsearch test_search
+setup: setup_docker setup_elasticsearch test_search
+
+update:
+	git submodule update --init --recursive
