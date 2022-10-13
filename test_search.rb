@@ -201,6 +201,15 @@ def main
     f.puts(results_with_fit_scores.to_yaml)
   end
 
+  require 'csv'
+  CSV.open('test_results_es.csv', 'w', col_sep: ';') do |csv|
+    results.sort_by do |r|
+      r[:expected_result]
+    end.each do |r|
+      csv << r.slice(:expected_result, :query, :rank__rs, :rank__keyword).values
+    end
+  end
+
   puts(results_with_fit_scores.to_yaml)
 end
 
