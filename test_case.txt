@@ -1,106 +1,120 @@
+affine coordinate system;Cartesian coordinate system
+set of closest polygon;Thiessen polygon
+service on internet;Web service
+shortened form of a concept;abbreviation
 closeness to a coordinate;absolute accuracy
 display software;access software
-program to process data;application
-property of an object;attribute
-digital terrain model;bare earth elevation
-distance around geometric feature;buffer
-text values;character
-taxonomy;classification
-program that calls api on server;client
-minimal area around a geometric object;convex hull
-change the values of a coordinate;coordinate operation
-gridded data;coverage
-tabular feature data;feature instance
-device to measure a quantity or thing;sensor
-time system;temporal reference system
-boundary of topological object;topological boundary
-road network;transport network
-person moving through a network;traveller
-triangle surface mesh;triangulated irregular network
-unprojected grid;ungeoreferenced grid
-line geometry;vector geometry
-selected point a candidate route passes through;waypoint
-service on internet;Web service
-null characters;white space
-shortened form of a concept;abbreviation
 status of access to a service;accessibility
 self-powered sensing device;active sensor
 identification and location of an object;address
 information used to identify the location of an entity;address
-outdated term;obsolete term
+synonymous term;admitted term
 height above sea level;altitude
+program to process data;application
 section of a line;arc <geometry>
+property of an object;attribute
+digital terrain model;bare earth elevation
+simple test of conformance;basic test
 angular measure of direction;bearing
+limit of an object;boundary
+line of change on a surface;breakline
+distance around geometric feature;buffer
 range of years based on an event;calendar era
+set response to a control;calibration
 information about group of items;catalogue
+text values;character
+taxonomy;classification
+program that calls api on server;client
 list of codes;codelist
+combined symbols;compound symbol
+representation of a system;conceptual model
+minimal area around a geometric object;convex hull
+change the values of a coordinate;coordinate operation
+coordinate conversion between two systems;coordinate transformation
+gridded data;coverage
 reduce storage size;data compression
+set of surface data points;digital elevation model
 null set;empty set
+merged features;feature fusion
+tabular feature data;feature instance
 group of like features;feature type
 multiple archives;federated archives
+polygon projected on a surface;footprint
+merged image;fused image
 list of locations;gazetteer
 location represented by a coordinate;geographic point location
 point with an accurate location;ground control point
+movement of a vessel;heave
+sound detection;hydrophone<SONAR>
+geometric errors in an image;image distortion
 on-site measurement;in situ measurement
 computer system that processes and displays data;information system
+radiation energy;irradiance
+travel to places;journey
+road network crossing;junction
+observed surface characteristics;land cover
 temporary use of a resource;lease
 representation of data based on a classification;legend
+point relative to a route;linear referencing system
 geospatial data and information on the web;linked geodata
 computing environment based on user's native language;locale
 identified place;location
-styled display of geographic information;map
+persistent independent data archive;long term preservation
+shortest distance between two points on a sphere;loxodrome
+group of turns in route;maneuver,manœuvre
 transformation of spherical coordinates to a plane;map projection
+styled display of geographic information;map
+ordered set of numbers;matrix
 description of a collection of data;metadata
 type of measurement system;metric unit
 straight down;nadir
-information history;provenance
-storage method of a matrix;row-major form <mathematics, computer science>
-angle measure for degrees;sexagesimal degree
-variation in steepness;slope
-gridded data based on a common attribute;thematic data
 group of points in an area;neighborhood <topology, metric spaces>
-polygon projected on a surface;footprint
-travel to places;journey
+examination of a property;observation
+outdated term;obsolete term
+temporal repeat;periodic time
 observed land characteristics;physiognomy
-observed surface characteristics;land cover
-point relative to a route;linear referencing system
-group of turns in route;maneuver,manœuvre
+set of 3d data points;point cloud
+closed area feature;polygon
 human-readable;portrayal
 initial longitude;prime meridian
-merged image;fused image
-time coordinate system;temporal coordinate reference system
-representation of the real world;universe of discourse
-georeferenced grid;rectified grid
-radiation energy;irradiance
+information history;provenance
 linear sensor;pushbroom sensor
-sound detection;hydrophone<SONAR>
-like concept different language;term equivalent
-temporal repeat;periodic time
-examination of a property;observation
-position on earth;spatial reference
-set of 3d data points;point cloud
-set of surface data points;digital elevation model
-enumeration;value domain
-coordinate conversion between two systems;coordinate transformation
-movement of a vessel;heave
-deformed sphere;spheroid
-merged features;feature fusion
-line of change on a surface;breakline
-spatial object through time;spatiotemporal object
-combined symbols;compound symbol
-set of closest polygon;Thiessen polygon
-ordered set of numbers;matrix
-splitting into identical spaces;tessellation
-energy converter;transducer
-limit of an object;boundary
-synonymous term;admitted term
-geometric errors in an image;image distortion
-simple test of conformance;basic test
-shortest distance between two points on a sphere;loxodrome
-set response to a control;calibration
-closed area feature;polygon
-affine coordinate system;Cartesian coordinate system
+georeferenced grid;rectified grid
 observing and measuring a feature from a distance;remote sensing
-representation of a system;conceptual model
-road network crossing;junction
-persistent independent data archive;long term preservation
+storage method of a matrix;row-major form <mathematics, computer science>
+device to measure a quantity or thing;sensor
+angle measure for degrees;sexagesimal degree
+variation in steepness;slope
+position on earth;spatial reference
+spatial object through time;spatiotemporal object
+deformed sphere;spheroid
+time coordinate system;temporal coordinate reference system
+time system;temporal reference system
+like concept different language;term equivalent
+splitting into identical spaces;tessellation
+gridded data based on a common attribute;thematic data
+boundary of topological object;topological boundary
+energy converter;transducer
+road network;transport network
+person moving through a network;traveller
+triangle surface mesh;triangulated irregular network
+unprojected grid;ungeoreferenced grid
+representation of the real world;universe of discourse
+enumeration;value domain
+line geometry;vector geometry
+selected point a candidate route passes through;waypoint
+null characters;white space
+unstructured text;free text
+name that identifies an object;identifier
+raster dataset of numerical values;image
+working system;implementation
+structure incorporated from another object;inheritance
+occurrence of an object;instance
+unique feature;item
+physical space occupied by an object;position
+specified amount of something;quantity
+delivered functions of a system;service
+object with surface area and volume;solid
+conventional representation of an object;symbol
+system of non-physical objects;system of concepts
+word describing a thing a concept;term
