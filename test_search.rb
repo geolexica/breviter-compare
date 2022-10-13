@@ -189,7 +189,9 @@ def main
 
   data = File.read('test-vectors.txt')
   test_cases = JSON.parse(data)
-  results = run_tests(client, test_cases)
+  results = run_tests(client, test_cases).sort_by do |r|
+    r[:expected_result]
+  end
 
   results_with_fit_score_formulas = display_overall_fit_score_formula(results)
   results_with_fit_scores = add_fit_scores(results)
