@@ -114,7 +114,7 @@ end
 def display_formula(sorted_by_rank_partitions, denominator, overall_score, mult = '*')
   "(#{
     sorted_by_rank_partitions.keys
-                             .sort_by { |partition| -FIT_SCORES[partition.to_i] }
+                             .sort_by { |partition| FIT_SCORES.keys.index(partition.to_i) }
                              .map { |partition| "#{FIT_SCORES[partition.to_i]}#{mult}#{sorted_by_rank_partitions[partition.to_i]}" }
                              .join(' + ')})" \
     " / #{denominator}" \
