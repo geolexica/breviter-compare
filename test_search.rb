@@ -190,7 +190,7 @@ def main
   data = File.read('test-vectors.txt')
   test_cases = JSON.parse(data)
   results = run_tests(client, test_cases).sort_by do |r|
-    r[:expected_result]
+    r[:expected_result].downcase
   end
 
   results_with_fit_score_formulas = display_overall_fit_score_formula(results)
@@ -203,9 +203,7 @@ def main
 
   require 'csv'
   CSV.open('test_results_es.csv', 'w', col_sep: ';') do |csv|
-    results.sort_by do |r|
-      r[:expected_result]
-    end.each do |r|
+    results.each do |r|
       csv << r.slice(:expected_result, :query, :rank__rs, :rank__keyword).values
     end
   end
