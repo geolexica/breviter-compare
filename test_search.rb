@@ -6,22 +6,25 @@ require 'typhoeus'
 require 'json'
 require 'yaml'
 
+RANK_NOT_FOUND = 200
 FIT_SCORES = {
   1 => 20,
   3 => 10,
   5 => 5,
   10 => 3,
-  20 => 1
+  20 => 1,
+  RANK_NOT_FOUND => -3 # Bucket for no matches in top 20
 }.freeze
 
-LENS = [1, 3, 5, 10, 20].freeze
+LENS = FIT_SCORES.keys.freeze
 
 #
-# Rank 1     => 1st partition
-# Rank 2-3   => 2nd partition
-# Rank 4-5   => 3rd partition
-# Rank 6-10  => 4th partition
-# Rank 11-   => 5th partition
+# Rank 1      => 1st partition
+# Rank 2-3    => 2nd partition
+# Rank 4-5    => 3rd partition
+# Rank 6-10   => 4th partition
+# Rank 11-20  => 5th partition
+# Rank 21-200 => 6th partition
 # Default rank partition is the last one.
 #
 # It is used for calculating fit score.
@@ -47,7 +50,7 @@ def add_fit_scores(results)
       query: result_entry[:query],
       expected_result: result_entry[:expected_result],
       fit_score__rs: get_score_from_rank(result_entry[:rank__rs]),
-      fit_score__keyword: get_score_from_rank(result_entry[:rank__keyword])
+      fit_score__keyword: get_score_from_rank(result_entry[:rank__keyword]),
     }
   end
 
@@ -126,7 +129,7 @@ def run_tests(client, test_cases)
     script_query__keyword = {
       "match": {
         "definition": query
-      }
+      },
     }
 
     script_query__rs = {
@@ -135,8 +138,8 @@ def run_tests(client, test_cases)
         "script": {
           "source": "cosineSimilarity(params.query_vector, 'vector') + 1.0",
           "params": { "query_vector": vector }
-        }
-      }
+        },
+      },
     }
     response__rs = search(client, script_query__rs)
     response__keyword = search(client, script_query__keyword)
@@ -154,8 +157,8 @@ def run_tests(client, test_cases)
     {
       query: query,
       expected_result: expected_result,
-      rank__rs: rank__rs || -1,
-      rank__keyword: rank__keyword || -1
+      rank__rs: rank__rs || RANK_NOT_FOUND,
+      rank__keyword: rank__keyword || RANK_NOT_FOUND
     }
   end
 end
