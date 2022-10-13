@@ -1,6 +1,7 @@
 node_modules
 
 test_results*.yml
+test_results*.csv
 test-vectors.txt
 
 db.json
