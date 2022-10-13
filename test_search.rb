@@ -164,7 +164,7 @@ def search(client, query)
   client.search(
     index: 'semantic_development',
     body: {
-      "size": 10,
+      "size": 20,
       "query": query,
       "_source": { "includes": [:term] }
     }
