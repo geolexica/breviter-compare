@@ -2,11 +2,21 @@
 
 all: prerequisites test_search
 
-test_search: test-vectors.txt
+test_search_google: test-vectors-google.txt
+	cp test-vectors-google.txt test-vectors.txt
 	ruby test_search.rb
 
-test-vectors.txt:
-	node prepare-test-vectors.js test_case.txt
+test_search_iso: test-vectors-iso.txt
+	cp test-vectors-iso.txt test-vectors.txt; \
+	ruby test_search.rb
+
+test-vectors-iso.txt:
+	node prepare-test-vectors.js tests/dataset-iso.csv; \
+	mv test-vectors.txt $@
+
+test-vectors-google.txt:
+	node prepare-test-vectors.js tests/dataset-google.csv; \
+	mv test-vectors.txt $@
 
 setup_docker:
 	docker network create elastic-network
@@ -17,7 +27,8 @@ setup_docker:
 		elasticsearch:8.4.2
 
 kill_docker:
-	docker rm -f $$(docker ps -f name=elasticsearch -q) || \
+	CONTAINER=$$(docker ps -f name=elasticsearch -q -a); \
+	[ -z "$$CONTAINER" ] || docker rm -f $$CONTAINER; \
 	docker network prune -f
 
 prerequisites: | update
@@ -35,7 +46,7 @@ db.json: | prerequisites
 clean: kill_docker
 	rm -f test-vectors.txt
 
-setup: setup_docker setup_elasticsearch test_search
+setup: setup_docker setup_elasticsearch
 
 update:
 	git submodule update --init --recursive
