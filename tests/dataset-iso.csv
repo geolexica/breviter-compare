@@ -61,14 +61,14 @@ computing environment based on user's native language;locale
 identified place;location
 persistent independent data archive;long term preservation
 shortest distance between two points on a sphere;loxodrome
-group of turns in route;maneuver,manœuvre
+group of turns in route;maneuver
 transformation of spherical coordinates to a plane;map projection
 styled display of geographic information;map
 ordered set of numbers;matrix
 description of a collection of data;metadata
 type of measurement system;metric unit
 straight down;nadir
-group of points in an area;neighborhood <topology, metric spaces>
+group of points in an area;neighborhood <topology
 examination of a property;observation
 outdated term;obsolete term
 temporal repeat;periodic time
@@ -81,7 +81,7 @@ information history;provenance
 linear sensor;pushbroom sensor
 georeferenced grid;rectified grid
 observing and measuring a feature from a distance;remote sensing
-storage method of a matrix;row-major form <mathematics, computer science>
+storage method of a matrix;row-major form <mathematics
 device to measure a quantity or thing;sensor
 angle measure for degrees;sexagesimal degree
 variation in steepness;slope
